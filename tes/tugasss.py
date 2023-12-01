@@ -44,8 +44,11 @@ def main():
 
         elif choice == "3":
             task_manager.display_tasks()
-            task_number = int(input("Masukkan nomor tugas yang selesai: "))
-            task_manager.complete_task(task_number)
+            try:
+                task_number = int(input("Masukkan nomor tugas yang selesai: "))
+                task_manager.complete_task(task_number)
+            except ValueError:
+                print("Masukkan nomor tugas dengan benar.")
 
         elif choice == "4":
             print("Terima kasih! Sampai jumpa.")
